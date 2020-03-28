@@ -7,7 +7,12 @@ pipeline {
                 	sh "git clone https://github.com/pabloccna/java-pipeline-jenkinsfile.git"	
             }
         }
-	
+	stage('Install') { 
+            steps {
+		        echo 'MVN Install ...'
+                	sh "mvn install"
+           }
+        }
         stage('Build') { 
             steps {
 		        echo 'Building ...'
